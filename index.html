@@ -3,1245 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mellal Auto Rent - Location de Voitures à Béni Mellal</title>
+    <title>Mellal Car Rent - Location de Voitures à Béni Mellal</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        :root {
-            --primary: #3056D3;
-            --primary-dark: #1C1C2E;
-            --accent: #FF7A00;
-            --light: #F4F4F4;
-            --dark: #333;
-            --white: #FFFFFF;
-            --gray: #E0E0E0;
-            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Lato', sans-serif;
-            color: var(--dark);
-            line-height: 1.6;
-            background-color: var(--light);
-        }
-
-        h1, h2, h3, h4 {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .btn {
-            display: inline-block;
-            background: var(--primary);
-            color: var(--white);
-            padding: 12px 24px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 500;
-            transition: var(--transition);
-        }
-
-        .btn:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-
-        .btn-accent {
-            background: var(--accent);
-        }
-
-        .btn-accent:hover {
-            background: #e06d00;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-            font-size: 2.5rem;
-            color: var(--primary-dark);
-            position: relative;
-        }
-
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: var(--accent);
-            margin: 15px auto 0;
-        }
-
-        /* Header & Navigation */
-        header {
-            background-color: var(--white);
-            box-shadow: var(--shadow);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        .logo span {
-            color: var(--accent);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 30px;
-        }
-
-        .nav-links a {
-            color: var(--dark);
-            text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        .nav-links a:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            bottom: -5px;
-            left: 0;
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover:after {
-            width: 100%;
-        }
-
-        .hamburger {
-            display: none;
-            cursor: pointer;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
-            color: var(--white);
-            display: flex;
-            align-items: center;
-            text-align: center;
-            padding-top: 80px;
-            position: relative;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, rgba(48, 86, 211, 0.8), rgba(255, 122, 0, 0.8));
-            mix-blend-mode: overlay;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            animation: fadeInDown 1s ease;
-        }
-
-        .hero p {
-            font-size: 1.4rem;
-            margin-bottom: 30px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-            animation: fadeInUp 1s ease;
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Booking Form */
-        .booking-form {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: var(--shadow);
-            margin-top: 40px;
-        }
-
-        .form-row {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 0 -10px;
-        }
-
-        .form-group {
-            flex: 1;
-            min-width: 200px;
-            margin: 10px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-
-        .form-group input,
-        .form-group select {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid var(--gray);
-            border-radius: 4px;
-            font-family: 'Lato', sans-serif;
-        }
-
-        /* Cars Section */
-        .cars {
-            padding: 100px 0;
-        }
-
-        .filters {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-bottom: 40px;
-            gap: 15px;
-        }
-
-        .filter-btn {
-            padding: 10px 20px;
-            background: var(--white);
-            border: 1px solid var(--gray);
-            border-radius: 4px;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .filter-btn:hover,
-        .filter-btn.active {
-            background: var(--primary);
-            color: var(--white);
-            border-color: var(--primary);
-        }
-
-        .cars-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .car-card {
-            background: var(--white);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-
-        .car-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .car-img {
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .car-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .car-card:hover .car-img img {
-            transform: scale(1.1);
-        }
-
-        .car-info {
-            padding: 20px;
-        }
-
-        .car-info h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
-
-        .car-specs {
-            display: flex;
-            flex-wrap: wrap;
-            margin-bottom: 15px;
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        .car-specs span {
-            margin-right: 15px;
-            display: flex;
-            align-items: center;
-        }
-
-        .car-specs i {
-            margin-right: 5px;
-            color: var(--primary);
-        }
-
-        .car-price {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px solid var(--gray);
-        }
-
-        .price {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .price span {
-            font-size: 0.9rem;
-            font-weight: 400;
-            color: #666;
-        }
-
-        /* How It Works Section */
-        .how-it-works {
-            padding: 100px 0;
-            background: var(--white);
-        }
-
-        .steps {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            margin-top: 50px;
-        }
-
-        .step {
-            flex: 1;
-            min-width: 250px;
-            text-align: center;
-            padding: 0 20px;
-            margin-bottom: 30px;
-        }
-
-        .step-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--primary);
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            margin: 0 auto 20px;
-        }
-
-        .step h3 {
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-        }
-
-        /* Testimonials */
-        .testimonials {
-            padding: 100px 0;
-            background: var(--light);
-        }
-
-        .testimonials-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .testimonial {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: var(--shadow);
-            max-width: 350px;
-            position: relative;
-        }
-
-        .testimonial:before {
-            content: '"';
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            font-size: 4rem;
-            color: rgba(48, 86, 211, 0.1);
-            font-family: serif;
-            line-height: 1;
-        }
-
-        .testimonial-content {
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-        }
-
-        .author-img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin-right: 15px;
-        }
-
-        .author-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .author-info h4 {
-            margin-bottom: 5px;
-        }
-
-        .author-info p {
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        .rating {
-            color: var(--accent);
-            margin-top: 5px;
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 100px 0;
-            background: var(--white);
-        }
-
-        .contact-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 50px;
-            margin-top: 50px;
-        }
-
-        .contact-info {
-            flex: 1;
-            min-width: 300px;
-            background: var(--white);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-info::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-        }
-
-        .contact-info h3 {
-            font-size: 2rem;
-            margin-bottom: 30px;
-            color: var(--primary-dark);
-            position: relative;
-            padding-bottom: 15px;
-        }
-
-        .contact-info h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background: var(--accent);
-        }
-
-        .info-item {
-            display: flex;
-            margin-bottom: 25px;
-            padding: 15px;
-            border-radius: 10px;
-            transition: var(--transition);
-            background: var(--light);
-        }
-
-        .info-item:hover {
-            transform: translateX(10px);
-            background: var(--white);
-            box-shadow: var(--shadow);
-        }
-
-        .info-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 20px;
-            color: var(--white);
-            font-size: 1.4rem;
-            transition: var(--transition);
-        }
-
-        .info-item:hover .info-icon {
-            background: var(--accent);
-            transform: rotate(360deg);
-        }
-
-        .info-content h4 {
-            color: var(--primary-dark);
-            margin-bottom: 5px;
-            font-size: 1.1rem;
-        }
-
-        .info-content p {
-            color: #666;
-            font-size: 1rem;
-        }
-
-        .map-container {
-            width: 100%;
-            height: 500px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            margin-top: 50px;
-        }
-
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        .contact-form {
-            flex: 1;
-            min-width: 300px;
-            background: var(--white);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-form::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-        }
-
-        .contact-form h3 {
-            font-size: 2rem;
-            margin-bottom: 30px;
-            color: var(--primary-dark);
-            position: relative;
-            padding-bottom: 15px;
-        }
-
-        .contact-form h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background: var(--accent);
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-            position: relative;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: var(--primary-dark);
-            transition: var(--transition);
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 15px;
-            border: 2px solid var(--gray);
-            border-radius: 8px;
-            font-family: 'Lato', sans-serif;
-            font-size: 1rem;
-            transition: var(--transition);
-            background: var(--light);
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            border-color: var(--primary);
-            outline: none;
-            background: var(--white);
-            box-shadow: 0 0 0 3px rgba(48, 86, 211, 0.1);
-        }
-
-        .form-group textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        .contact-form .btn {
-            width: 100%;
-            padding: 15px;
-            font-size: 1.1rem;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .contact-form .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: var(--transition);
-            z-index: -1;
-        }
-
-        .contact-form .btn:hover::before {
-            left: 100%;
-        }
-
-        .contact-form .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(48, 86, 211, 0.3);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--primary-dark);
-            color: var(--white);
-            padding: 60px 0 20px;
-        }
-
-        .footer-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 50px;
-            margin-bottom: 40px;
-        }
-
-        .footer-col {
-            flex: 1;
-            min-width: 200px;
-        }
-
-        .footer-col h3 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-col h3:after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 50px;
-            height: 2px;
-            background: var(--accent);
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-
-        .footer-links a {
-            color: #ddd;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .footer-links a:hover {
-            color: var(--accent);
-            padding-left: 5px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: var(--white);
-            transition: var(--transition);
-        }
-
-        .social-links a:hover {
-            background: var(--accent);
-            transform: translateY(-3px);
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
-            color: #aaa;
-        }
-
-        /* WhatsApp Button */
-        .whatsapp-btn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #25D366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            z-index: 999;
-            transition: var(--transition);
-            text-decoration: none;
-        }
-
-        .whatsapp-btn:hover {
-            transform: scale(1.1);
-            background: #128C7E;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-            
-            .step {
-                min-width: 200px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background: var(--white);
-                flex-direction: column;
-                align-items: center;
-                padding: 40px 0;
-                transition: var(--transition);
-            }
-
-            .nav-links.active {
-                left: 0;
-            }
-
-            .nav-links li {
-                margin: 15px 0;
-            }
-
-            .hamburger {
-                display: block;
-            }
-
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .steps {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .step {
-                margin-bottom: 40px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .btn {
-                padding: 10px 20px;
-            }
-            
-            .form-group {
-                min-width: 100%;
-            }
-        }
-
-        /* Services Section */
-        .services {
-            padding: 100px 0;
-            background: var(--light);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .service-card {
-            background: var(--white);
-            padding: 40px 30px;
-            border-radius: 15px;
-            text-align: center;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, var(--primary), var(--accent));
-            opacity: 0;
-            transition: var(--transition);
-            z-index: 1;
-        }
-
-        .service-card:hover::before {
-            opacity: 0.1;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .service-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--light);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 25px;
-            font-size: 2rem;
-            color: var(--primary);
-            transition: var(--transition);
-            position: relative;
-            z-index: 2;
-        }
-
-        .service-card:hover .service-icon {
-            background: var(--primary);
-            color: var(--white);
-        }
-
-        .service-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .service-content h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            color: var(--primary-dark);
-        }
-
-        .service-content p {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        .service-features {
-            margin-top: 20px;
-            text-align: left;
-        }
-
-        .service-features li {
-            margin-bottom: 10px;
-            color: #666;
-            display: flex;
-            align-items: center;
-        }
-
-        .service-features li i {
-            color: var(--accent);
-            margin-right: 10px;
-        }
-
-        .newsletter-form {
-            margin-top: 20px;
-        }
-
-        .newsletter-form h3 {
-            color: var(--white);
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-        }
-
-        .newsletter-form p {
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 20px;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .newsletter-input-group {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 15px;
-        }
-
-        .newsletter-input-group input {
-            flex: 1;
-            padding: 12px 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
-            color: var(--white);
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-
-        .newsletter-input-group input::placeholder {
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .newsletter-input-group input:focus {
-            outline: none;
-            border-color: var(--accent);
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        .newsletter-input-group .btn {
-            padding: 12px 25px;
-            background: var(--accent);
-            border: none;
-            border-radius: 8px;
-            color: var(--white);
-            font-weight: 500;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .newsletter-input-group .btn i {
-            font-size: 1.1rem;
-        }
-
-        .newsletter-input-group .btn:hover {
-            background: #e06d00;
-            transform: translateY(-2px);
-        }
-
-        .newsletter-features {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .newsletter-feature {
-            display: flex;
-            align-items: center;
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 0.9rem;
-        }
-
-        .newsletter-feature i {
-            color: var(--accent);
-            margin-right: 8px;
-            font-size: 1rem;
-        }
-
-        /* About Agency Section */
-        .about-agency {
-            padding: 100px 0;
-            background: var(--white);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .about-agency::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, rgba(48, 86, 211, 0.05), rgba(255, 122, 0, 0.05));
-            z-index: 0;
-        }
-
-        .about-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .about-image {
-            flex: 1;
-            min-width: 300px;
-            position: relative;
-        }
-
-        .about-image img {
-            width: 100%;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-        }
-
-        .about-image::before {
-            content: '';
-            position: absolute;
-            top: -20px;
-            left: -20px;
-            width: 100%;
-            height: 100%;
-            border: 3px solid var(--primary);
-            border-radius: 15px;
-            z-index: -1;
-        }
-
-        .about-content {
-            flex: 1;
-            min-width: 300px;
-            position: relative;
-        }
-
-        .about-content h2 {
-            font-size: 2.5rem;
-            color: var(--primary-dark);
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 15px;
-        }
-
-        .about-content h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 80px;
-            height: 4px;
-            background: var(--accent);
-        }
-
-        .about-content p {
-            color: #666;
-            line-height: 1.8;
-            margin-bottom: 25px;
-            font-size: 1.1rem;
-        }
-
-        .about-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 20px;
-            background: var(--white);
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-
-        .stat-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        .stat-label {
-            color: #666;
-            font-size: 1rem;
-            font-weight: 500;
-        }
-
-        .about-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .feature-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--light);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            font-size: 1.2rem;
-            transition: var(--transition);
-        }
-
-        .feature-item:hover .feature-icon {
-            background: var(--primary);
-            color: var(--white);
-            transform: rotate(360deg);
-        }
-
-        .feature-text h4 {
-            color: var(--primary-dark);
-            margin-bottom: 5px;
-            font-size: 1.1rem;
-        }
-
-        .feature-text p {
-            color: #666;
-            font-size: 0.9rem;
-            margin: 0;
-        }
-    </style>
+    <link rel="stylesheet" href="css/stlye.css">
 </head>
 <body>
     <!-- Header & Navigation -->
     <header>
         <div class="container">
             <nav class="navbar">
-                <a href="#" class="logo">Mellal<span>Auto</span>Rent</a>
+                <a href="#" class="logo">Mellal<span>Car</span>Rent</a>
                 <ul class="nav-links">
                     <li><a href="#home">Accueil</a></li>
+                    <li><a href="#about">À propos</a></li>
                     <li><a href="#cars">Nos Voitures</a></li>
                     <li><a href="#how-it-works">Comment ça marche</a></li>
                     <li><a href="#testimonials">Avis</a></li>
@@ -1256,32 +31,29 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
+        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>Location de Voitures à Béni Mellal</h1>
-            <p>Conduisez en toute liberté avec notre large sélection de véhicules neufs à des tarifs compétitifs</p>
-            <a href="#cars" class="btn btn-accent">Voir nos véhicules</a>
-            
-            <!-- Booking Form -->
-            <div class="booking-form">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="location">Lieu de prise en charge</label>
-                        <select id="location">
-                            <option value="beni-mellal">Béni Mellal</option>
-                            <option value="casablanca">Casablanca</option>
-                            <option value="marrakech">Marrakech</option>
-                        </select>
+            <div class="hero-text">
+                <h1>Location de Voitures à Béni Mellal</h1>
+                <p class="hero-subtitle">Conduisez en toute liberté avec notre large sélection de véhicules neufs à des tarifs
+                    compétitifs</p>
+                <div class="hero-features">
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Véhicules neufs et bien entretenus</span>
                     </div>
-                    <div class="form-group">
-                        <label for="pickup-date">Date de prise</label>
-                        <input type="date" id="pickup-date">
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Prix compétitifs sans frais cachés</span>
                     </div>
-                    <div class="form-group">
-                        <label for="return-date">Date de retour</label>
-                        <input type="date" id="return-date">
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Service client 24/7</span>
                     </div>
                 </div>
-                <button class="btn" style="width: 100%; margin-top: 15px;">Rechercher une voiture</button>
+                <div class="hero-cta">
+                    <a href="#cars" class="btn btn-accent">Découvrir nos véhicules</a>
+                </div>
             </div>
         </div>
     </section>
@@ -1295,7 +67,9 @@
                 </div>
                 <div class="about-content">
                     <h2>À propos de notre agence</h2>
-                    <p>Depuis plus de 10 ans, Mellal Auto Rent est le leader de la location de voitures à Béni Mellal. Notre engagement envers l'excellence et le service client nous a permis de devenir la référence dans le domaine de la location automobile.</p>
+                    <p>Depuis plus de 10 ans, Mellal Car Rent est le leader de la location de voitures à Béni Mellal. Notre engagement
+                        envers l'excellence et le service client nous a permis de devenir la référence dans le domaine de la location
+                        automobile.</p>
                     <p>Nous proposons une large gamme de véhicules neufs et bien entretenus, adaptés à tous les besoins et budgets. Notre équipe professionnelle est disponible 24/7 pour vous assister et vous garantir une expérience de location sans souci.</p>
                     
                     <div class="about-features">
@@ -1346,6 +120,67 @@
             </div>
         </div>
     </section>
+
+    <!-- Agencies in Other Cities Section -->
+    <!-- <section class="agencies-cities" id="agencies-cities">
+                    <div class="container">
+                        <h2 class="section-title">Nos Agences dans d'autres villes</h2>
+                        <div class="cities-grid">
+                            <div class="city-card">
+                                <div class="city-img">
+                                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
+                                        alt="Casablanca">
+                                    <div class="city-overlay">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>Casablanca</span>
+                                    </div>
+                                </div>
+                                <div class="city-info">
+                                    <a href="#" class="btn city-btn">Voir les voitures</a>
+                                </div>
+                            </div>
+                            <div class="city-card">
+                                <div class="city-img">
+                                    <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80"
+                                        alt="Marrakech">
+                                    <div class="city-overlay">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>Marrakech</span>
+                                    </div>
+                                </div>
+                                <div class="city-info">
+                                    <a href="#" class="btn city-btn">Voir les voitures</a>
+                                </div>
+                            </div>
+                            <div class="city-card">
+                                <div class="city-img">
+                                    <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=600&q=80"
+                                        alt="Tanger">
+                                    <div class="city-overlay">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>Tanger</span>
+                                    </div>
+                                </div>
+                                <div class="city-info">
+                                    <a href="#" class="btn city-btn">Voir les voitures</a>
+                                </div>
+                            </div>
+                            <div class="city-card">
+                                <div class="city-img">
+                                    <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80"
+                                        alt="Agadir">
+                                    <div class="city-overlay">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>Agadir</span>
+                                    </div>
+                                </div>
+                                <div class="city-info">
+                                    <a href="#" class="btn city-btn">Voir les voitures</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section> -->
 
     <!-- Services Section -->
     <section class="services" id="services">
@@ -1403,127 +238,364 @@
     <!-- Cars Section -->
     <section class="cars" id="cars">
         <div class="container">
-            <h2 class="section-title">Nos Véhicules</h2>
+            <h2 class="section-title">Notre Flotte de Véhicules</h2>
+            <p class="section-subtitle">Choisissez le véhicule qui correspond à vos besoins</p>
             
-            <div class="filters">
-                <button class="filter-btn active" data-filter="all">Tous</button>
-                <button class="filter-btn" data-filter="economique">Économique</button>
-                <button class="filter-btn" data-filter="suv">SUV</button>
-                <button class="filter-btn" data-filter="familiale">Familiale</button>
-                <button class="filter-btn" data-filter="automatique">Automatique</button>
+            <div class="filters-container">
+                <div class="filters">
+                    <button class="filter-btn active" data-filter="all">
+                        <i class="fas fa-car"></i>
+                        <span>Tous les véhicules</span>
+                    </button>
+                    <button class="filter-btn" data-filter="economique">
+                        <i class="fas fa-euro-sign"></i>
+                        <span>Économique</span>
+                    </button>
+                    <button class="filter-btn" data-filter="suv">
+                        <i class="fas fa-truck-monster"></i>
+                        <span>SUV & 4x4</span>
+                    </button>
+                    <button class="filter-btn" data-filter="familiale">
+                        <i class="fas fa-users"></i>
+                        <span>Familiale</span>
+                    </button>
+                    <button class="filter-btn" data-filter="automatique">
+                        <i class="fas fa-cogs"></i>
+                        <span>Automatique</span>
+                    </button>
+                    </div>
+                    <div class="filter-stats">
+                        <span class="filter-count">6 véhicules disponibles</span>
+                    </div>
             </div>
             
             <div class="cars-grid">
-                <!-- Car 1 -->
+                <!-- Car 1 - Dacia Logan -->
                 <div class="car-card" data-category="economique">
+                    <div class="car-badge">Économique</div>
                     <div class="car-img">
-                        <img src="https://images.unsplash.com/photo-1550355291-bbee04a92027?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Dacia Logan">
+                        <img src="assets/images/dacia-logan-2021-3.png" alt="Dacia Logan 2021">
+                        <div class="car-overlay">
+                            <span class="car-year">2021</span>
+                            <span class="car-transmission">Manuelle</span>
+                        </div>
                     </div>
                     <div class="car-info">
-                        <h3>Dacia Logan</h3>
-                        <div class="car-specs">
-                            <span><i class="fas fa-calendar-alt"></i> 2022</span>
-                            <span><i class="fas fa-cogs"></i> Manuelle</span>
-                            <span><i class="fas fa-gas-pump"></i> Diesel</span>
+                        <div class="car-header">
+                            <h3 class="car-title">Dacia Logan</h3>
+                            <div class="car-price-header">
+                                <div class="price-container">
+                                    <span class="currency">MAD</span>
+                                    <span class="price">250</span>
+                                    <span class="price-period">/jour</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="car-price">
-                            <div class="price">250 MAD <span>/jour</span></div>
-                            <a href="#" class="btn">Réserver</a>
+                        <div class="car-specs">
+                            <div class="spec-item">
+                                <i class="fas fa-gas-pump"></i>
+                                <span>Essence</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-users"></i>
+                                <span>5 places</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-suitcase"></i>
+                                <span>3 valises</span>
+                            </div>
+                            </div>
+                            <div class="car-actions">
+                                <div class="action-buttons-row">
+                                    <a href="#" class="btn btn-primary col-6">
+                                        <i class="fas fa-calendar-check"></i>
+                                        Réserver
+                                    </a>
+                                    <a href="https://wa.me/212612345678?text=Je%20suis%20intéressé%20par%20la%20Dacia%20Logan"
+                                        class="btn btn-whatsapp col-6">
+                                        <i class="fab fa-whatsapp"></i>
+                                        WhatsApp
+                                    </a>
+                                </div>
+                            <a href="car-detalis.html" class="btn btn-view-more col-12">
+                                <i class="fas fa-info-circle"></i>
+                                Voir plus
+                            </a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Car 2 -->
+                <!-- Car 2 - Kia Picanto -->
                 <div class="car-card" data-category="economique automatique">
+                    <div class="car-badge">Économique</div>
                     <div class="car-img">
-                        <img src="https://images.unsplash.com/photo-1601027840259-774f453e5b0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Kia Picanto">
+                        <img src="assets/images/2012-kia-picanto.jpg" alt="Kia Picanto 2012">
+                        <div class="car-overlay">
+                            <span class="car-year">2012</span>
+                            <span class="car-transmission">Manuelle</span>
+                        </div>
                     </div>
                     <div class="car-info">
-                        <h3>Kia Picanto</h3>
-                        <div class="car-specs">
-                            <span><i class="fas fa-calendar-alt"></i> 2021</span>
-                            <span><i class="fas fa-cogs"></i> Automatique</span>
-                            <span><i class="fas fa-gas-pump"></i> Essence</span>
+                        <div class="car-header">
+                            <h3 class="car-title">Kia Picanto</h3>
+                            <div class="car-price-header">
+                                <div class="price-container">
+                                    <span class="currency">MAD</span>
+                                    <span class="price">200</span>
+                                    <span class="price-period">/jour</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="car-price">
-                            <div class="price">300 MAD <span>/jour</span></div>
-                            <a href="#" class="btn">Réserver</a>
+                        <div class="car-specs">
+                            <div class="spec-item">
+                                <i class="fas fa-gas-pump"></i>
+                                <span>Essence</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-users"></i>
+                                <span>4 places</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-suitcase"></i>
+                                <span>2 valises</span>
+                            </div>
+                            </div>
+                            <div class="car-actions">
+                                <div class="action-buttons-row">
+                                    <a href="#" class="btn btn-primary col-6">
+                                        <i class="fas fa-calendar-check"></i>
+                                        Réserver
+                                    </a>
+                                    <a href="https://wa.me/212612345678?text=Je%20suis%20intéressé%20par%20la%20Kia%20Picanto"
+                                        class="btn btn-whatsapp col-6">
+                                        <i class="fab fa-whatsapp"></i>
+                                        WhatsApp
+                                    </a>
+                                </div>
+                            <a href="car-detalis.html" class="btn btn-view-more col-12">
+                                <i class="fas fa-info-circle"></i>
+                                Voir plus
+                            </a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Car 3 -->
+                <!-- Car 3 - Ford Fiesta -->
                 <div class="car-card" data-category="familiale">
+                    <div class="car-badge">Familiale</div>
                     <div class="car-img">
-                        <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Peugeot 208">
+                        <img src="assets/images/ford-fiesta-2013.jpg" alt="Ford Fiesta 2013">
+                        <div class="car-overlay">
+                            <span class="car-year">2013</span>
+                            <span class="car-transmission">Manuelle</span>
+                        </div>
                     </div>
                     <div class="car-info">
-                        <h3>Peugeot 208</h3>
-                        <div class="car-specs">
-                            <span><i class="fas fa-calendar-alt"></i> 2023</span>
-                            <span><i class="fas fa-cogs"></i> Manuelle</span>
-                            <span><i class="fas fa-gas-pump"></i> Essence</span>
+                        <div class="car-header">
+                            <h3 class="car-title">Ford Fiesta</h3>
+                            <div class="car-price-header">
+                                <div class="price-container">
+                                    <span class="currency">MAD</span>
+                                    <span class="price">300</span>
+                                    <span class="price-period">/jour</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="car-price">
-                            <div class="price">350 MAD <span>/jour</span></div>
-                            <a href="#" class="btn">Réserver</a>
+                        <div class="car-specs">
+                            <div class="spec-item">
+                                <i class="fas fa-gas-pump"></i>
+                                <span>Essence</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-users"></i>
+                                <span>5 places</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-suitcase"></i>
+                                <span>3 valises</span>
+                            </div>
+                            </div>
+                            <div class="car-actions">
+                                <div class="action-buttons-row">
+                                    <a href="#" class="btn btn-primary col-6">
+                                        <i class="fas fa-calendar-check"></i>
+                                        Réserver
+                                    </a>
+                                    <a href="https://wa.me/212612345678?text=Je%20suis%20intéressé%20par%20la%20Ford%20Fiesta"
+                                        class="btn btn-whatsapp col-6">
+                                        <i class="fab fa-whatsapp"></i>
+                                        WhatsApp
+                                    </a>
+                                </div>
+                            <a href="car-detalis.html" class="btn btn-view-more col-12">
+                                <i class="fas fa-info-circle"></i>
+                                Voir plus
+                            </a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Car 4 -->
+                <!-- Car 4 - Renault Clio Campus -->
                 <div class="car-card" data-category="familiale automatique">
+                    <div class="car-badge badge-premium">Premium</div>
                     <div class="car-img">
-                        <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Renault Clio">
+                        <img src="assets/images/clio_campus.jpg" alt="Renault Clio Campus">
+                        <div class="car-overlay">
+                            <span class="car-year">2015</span>
+                            <span class="car-transmission">Manuelle</span>
+                        </div>
                     </div>
                     <div class="car-info">
-                        <h3>Renault Clio</h3>
-                        <div class="car-specs">
-                            <span><i class="fas fa-calendar-alt"></i> 2022</span>
-                            <span><i class="fas fa-cogs"></i> Automatique</span>
-                            <span><i class="fas fa-gas-pump"></i> Diesel</span>
+                        <div class="car-header">
+                            <h3 class="car-title">Renault Clio Campus</h3>
+                            <div class="car-price-header">
+                                <div class="price-container">
+                                    <span class="currency">MAD</span>
+                                    <span class="price">350</span>
+                                    <span class="price-period">/jour</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="car-price">
-                            <div class="price">400 MAD <span>/jour</span></div>
-                            <a href="#" class="btn">Réserver</a>
+                        <div class="car-specs">
+                            <div class="spec-item">
+                                <i class="fas fa-gas-pump"></i>
+                                <span>Essence</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-users"></i>
+                                <span>5 places</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-suitcase"></i>
+                                <span>3 valises</span>
+                            </div>
+                            </div>
+                            <div class="car-actions">
+                                <div class="action-buttons-row">
+                                    <a href="#" class="btn btn-primary col-6">
+                                        <i class="fas fa-calendar-check"></i>
+                                        Réserver
+                                    </a>
+                                    <a href="https://wa.me/212612345678?text=Je%20suis%20intéressé%20par%20la%20Renault%20Clio%20Campus"
+                                        class="btn btn-whatsapp col-6">
+                                        <i class="fab fa-whatsapp"></i>
+                                        WhatsApp
+                                    </a>
+                                </div>
+                            <a href="car-detalis.html" class="btn btn-view-more col-12">
+                                <i class="fas fa-info-circle"></i>
+                                Voir plus
+                            </a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Car 5 -->
+                <!-- Car 5 - Renault -->
                 <div class="car-card" data-category="suv">
+                    <div class="car-badge badge-suv">SUV</div>
                     <div class="car-img">
-                        <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Hyundai Tucson">
+                        <img src="assets/images/renault.jpg" alt="Renault SUV">
+                        <div class="car-overlay">
+                            <span class="car-year">2018</span>
+                            <span class="car-transmission">Automatique</span>
+                        </div>
                     </div>
                     <div class="car-info">
-                        <h3>Hyundai Tucson</h3>
-                        <div class="car-specs">
-                            <span><i class="fas fa-calendar-alt"></i> 2023</span>
-                            <span><i class="fas fa-cogs"></i> Automatique</span>
-                            <span><i class="fas fa-gas-pump"></i> Diesel</span>
+                        <div class="car-header">
+                            <h3 class="car-title">Renault Captur</h3>
+                            <div class="car-price-header">
+                                <div class="price-container">
+                                    <span class="currency">MAD</span>
+                                    <span class="price">450</span>
+                                    <span class="price-period">/jour</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="car-price">
-                            <div class="price">600 MAD <span>/jour</span></div>
-                            <a href="#" class="btn">Réserver</a>
+                        <div class="car-specs">
+                            <div class="spec-item">
+                                <i class="fas fa-gas-pump"></i>
+                                <span>Diesel</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-users"></i>
+                                <span>5 places</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-suitcase"></i>
+                                <span>4 valises</span>
+                            </div>
+                            </div>
+                            <div class="car-actions">
+                                <div class="action-buttons-row">
+                                    <a href="#" class="btn btn-primary col-6">
+                                        <i class="fas fa-calendar-check"></i>
+                                        Réserver
+                                    </a>
+                                    <a href="https://wa.me/212612345678?text=Je%20suis%20intéressé%20par%20le%20Renault%20Captur"
+                                        class="btn btn-whatsapp col-6">
+                                        <i class="fab fa-whatsapp"></i>
+                                        WhatsApp
+                                    </a>
+                                </div>
+                            <a href="car-detalis.html" class="btn btn-view-more col-12">
+                                <i class="fas fa-info-circle"></i>
+                                Voir plus
+                            </a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Car 6 -->
+                <!-- Car 6 - Suzuki Swift -->
                 <div class="car-card" data-category="suv">
+                    <div class="car-badge badge-suv">SUV</div>
                     <div class="car-img">
-                        <img src="https://images.unsplash.com/photo-1558981852-426c6c22a060?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80" alt="Dacia Duster">
+                        <img src="assets/images/suzuki-swift-2010.jpg" alt="Suzuki Swift 2010">
+                        <div class="car-overlay">
+                            <span class="car-year">2010</span>
+                            <span class="car-transmission">Manuelle</span>
+                        </div>
                     </div>
                     <div class="car-info">
-                        <h3>Dacia Duster</h3>
-                        <div class="car-specs">
-                            <span><i class="fas fa-calendar-alt"></i> 2022</span>
-                            <span><i class="fas fa-cogs"></i> Manuelle</span>
-                            <span><i class="fas fa-gas-pump"></i> Diesel</span>
+                        <div class="car-header">
+                            <h3 class="car-title">Suzuki Swift</h3>
+                            <div class="car-price-header">
+                                <div class="price-container">
+                                    <span class="currency">MAD</span>
+                                    <span class="price">250</span>
+                                    <span class="price-period">/jour</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="car-price">
-                            <div class="price">450 MAD <span>/jour</span></div>
-                            <a href="#" class="btn">Réserver</a>
+                        <div class="car-specs">
+                            <div class="spec-item">
+                                <i class="fas fa-gas-pump"></i>
+                                <span>Essence</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-users"></i>
+                                <span>5 places</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-suitcase"></i>
+                                <span>2 valises</span>
+                            </div>
+                            </div>
+                            <div class="car-actions">
+                                <div class="action-buttons-row">
+                                    <a href="#" class="btn btn-primary col-6">
+                                        <i class="fas fa-calendar-check"></i>
+                                        Réserver
+                                    </a>
+                                    <a href="https://wa.me/212612345678?text=Je%20suis%20intéressé%20par%20le%20Suzuki%20Swift"
+                                        class="btn btn-whatsapp col-6">
+                                        <i class="fab fa-whatsapp"></i>
+                                        WhatsApp
+                                    </a>
+                                </div>
+                            <a href="car-detalis.html" class="btn btn-view-more col-12">
+                                <i class="fas fa-info-circle"></i>
+                                Voir plus
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -1568,7 +640,8 @@
             <div class="testimonials-container">
                 <div class="testimonial">
                     <div class="testimonial-content">
-                        <p>Excellent service et voiture impeccable ! Je recommande vivement Mellal Auto Rent pour leur professionnalisme et leurs tarifs compétitifs.</p>
+                        <p>Excellent service et voiture impeccable ! Je recommande vivement Mellal Car Rent pour leur professionnalisme et leurs
+                            tarifs compétitifs.</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-img">
@@ -1633,10 +706,147 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">Questions Fréquentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Quels sont les documents requis pour louer une voiture ?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Pour louer une voiture au Maroc, vous aurez besoin des documents suivants :</p>
+                        <ul>
+                            <li>Permis de conduire valide (minimum 1 an d'ancienneté)</li>
+                            <li>Carte d'identité ou passeport</li>
+                            <li>Justificatif de domicile</li>
+                            <li>Carte bancaire au nom du conducteur principal</li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Quelle est la politique d'assurance incluse ?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Toutes nos locations incluent une assurance de base qui couvre :</p>
+                        <ul>
+                            <li>Dommages causés au véhicule</li>
+                            <li>Vol du véhicule</li>
+                            <li>Responsabilité civile</li>
+                            <li>Assistance routière 24/7</li>
+                        </ul>
+                        <p>Une franchise peut s'appliquer en cas de sinistre. Nous proposons également des options pour
+                            réduire ou supprimer la franchise.</p>
+                    </div>
+                </div>
+    
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Quelles sont les conditions de livraison et reprise du véhicule ?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nous proposons plusieurs options :</p>
+                        <ul>
+                            <li>Livraison et reprise à notre agence de Béni Mellal</li>
+                            <li>Livraison à l'aéroport (service payant)</li>
+                            <li>Livraison à votre hôtel ou adresse (service payant)</li>
+                        </ul>
+                        <p>Les frais de livraison varient selon la distance et le type de véhicule.</p>
+                    </div>
+                </div>
+    
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Quelle est la politique de carburant ?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Notre politique de carburant est simple :</p>
+                        <ul>
+                            <li>Le véhicule vous est remis avec un réservoir plein</li>
+                            <li>Vous devez le rendre avec un réservoir plein</li>
+                            <li>En cas de retour avec moins de carburant, des frais de service seront appliqués</li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Que faire en cas de panne ou d'accident ?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>En cas de problème :</p>
+                        <ul>
+                            <li>Contactez immédiatement notre service d'assistance 24/7</li>
+                            <li>Ne quittez pas les lieux en cas d'accident</li>
+                            <li>Remplissez le constat amiable si nécessaire</li>
+                            <li>Prenez des photos du véhicule et des dégâts</li>
+                        </ul>
+                        <p>Notre équipe vous assistera et organisera le remplacement du véhicule si nécessaire.</p>
+                    </div>
+                </div>
+    
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Quelles sont les conditions d'annulation ?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Notre politique d'annulation :</p>
+                        <ul>
+                            <li>Annulation gratuite jusqu'à 24h avant la date de début de location</li>
+                            <li>Frais d'annulation de 50% si annulation moins de 24h avant</li>
+                            <li>Frais complets si non-présentation sans préavis</li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Peut-on traverser la frontière avec le véhicule ?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>La traversée des frontières est possible sous certaines conditions :</p>
+                        <ul>
+                            <li>Autorisation préalable requise</li>
+                            <li>Frais supplémentaires applicables</li>
+                            <li>Documents spécifiques nécessaires selon le pays de destination</li>
+                            <li>Certaines restrictions peuvent s'appliquer selon le type de véhicule</li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Quelles sont les options de paiement acceptées ?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nous acceptons les moyens de paiement suivants :</p>
+                        <ul>
+                            <li>Cartes bancaires (Visa, Mastercard)</li>
+                            <li>Espèces (en dirhams marocains)</li>
+                            <li>Virements bancaires (pour les réservations à l'avance)</li>
+                            <li>Paiement en ligne sécurisé</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
-            <h2 class="section-title">Contact & Réservation</h2>
+            <h2 class="section-title">Contact</h2>
             <div class="contact-container">
                 <div class="contact-info">
                     <h3>Notre agence</h3>
@@ -1645,26 +855,24 @@
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div class="info-content">
-                            <h4>Adresse</h4>
-                            <p>123 Avenue Mohammed V, Béni Mellal, Maroc</p>
+                            <a href="https://www.google.com/maps/search/123+Avenue+Mohammed+V,+B%C3%A9ni+Mellal,+Maroc" target="_blank">123 Avenue
+                                Mohammed V, Béni Mellal, Maroc</a>
                         </div>
                     </div>
                     <div class="info-item">
                         <div class="info-icon">
                             <i class="fas fa-phone-alt"></i>
                         </div>
-                        <div>
-                            <h4>Téléphone</h4>
-                            <p>+212 5 23 45 67 89</p>
+                        <div class="info-content">
+                            <a href="tel:+212523456789">+212 5 23 45 67 89</a>
                         </div>
                     </div>
                     <div class="info-item">
                         <div class="info-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
-                        <div>
-                            <h4>Email</h4>
-                            <p>contact@mellalautorent.com</p>
+                        <div class="info-content">
+                            <a href="mailto:contact@mellalcarrent.com">contact@mellalcarrent.com</a>
                         </div>
                     </div>
                     <div class="info-item">
@@ -1677,31 +885,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="contact-form">
-                    <h3>Envoyez-nous un message</h3>
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Nom complet</label>
-                            <input type="text" id="name" required placeholder="Votre nom complet">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" required placeholder="Votre adresse email">
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Téléphone</label>
-                            <input type="tel" id="phone" required placeholder="Votre numéro de téléphone">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" required placeholder="Votre message..."></textarea>
-                        </div>
-                        <button type="submit" class="btn">Envoyer le message</button>
-                    </form>
-                </div>
-            </div>
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3396.1234567890123!2d-6.349999999999999!3d32.349999999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzLCsDIxJzAwLjAiTiA2wrAyMCcwMC4wIlc!5e0!3m2!1sfr!2sma!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
+                <div class="map-container">
+                    <h3>Localisation</h3>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3396.1234567890123!2d-6.349999999999999!3d32.349999999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzLCsDIxJzAwLjAiTiA2wrAyMCcwMC4wIlc!5e0!3m2!1sfr!2sma!4v1234567890"
+                        allowfullscreen="" loading="lazy"></iframe>
+                    </div>
             </div>
         </div>
     </section>
@@ -1711,7 +900,7 @@
         <div class="container">
             <div class="footer-container">
                 <div class="footer-col">
-                    <h3>Mellal Auto Rent</h3>
+                    <h3>Mellal Car Rent</h3>
                     <p>Leader de la location de voitures à Béni Mellal depuis 2010. Nous proposons des véhicules neufs à des tarifs compétitifs.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -1740,36 +929,39 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <div class="newsletter-form">
-                        <h3>Restez informé</h3>
-                        <p>Inscrivez-vous à notre newsletter pour recevoir nos dernières offres et actualités</p>
-                        <form>
-                            <div class="newsletter-input-group">
-                                <input type="email" placeholder="Votre adresse email" required>
-                                <button type="submit" class="btn">
-                                    <i class="fas fa-paper-plane"></i>
-                                </button>
+                    <div class="footer-contact-info">
+                        <h3>Contactez-nous</h3>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
                             </div>
-                        </form>
-                        <div class="newsletter-features">
-                            <div class="newsletter-feature">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Offres exclusives</span>
+                            <div class="info-content">
+                                <a href="https://www.google.com/maps/search/123+Avenue+Mohammed+V,+B%C3%A9ni+Mellal,+Maroc" target="_blank">123
+                                    Avenue Mohammed V, Béni Mellal, Maroc</a>
                             </div>
-                            <div class="newsletter-feature">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Pas de spam</span>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-phone-alt"></i>
                             </div>
-                            <div class="newsletter-feature">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Désabonnement facile</span>
+                            <div class="info-content">
+                                <a href="tel:+212523456789">+212 5 23 45 67 89</a>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="info-content">
+                                <a href="mailto:contact@mellalcarrent.com">contact@mellalcarrent.com</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 Mellal Auto Rent. Tous droits réservés. | Développé par <a href="https://zackwebdev.com" target="_blank" style="color: var(--accent);">zackwebdev.com</a></p>
+                <p>&copy; 2023 Mellal Car Rent. Tous droits réservés. | Développé par <a href="https://zackwebdev.vercel.app"
+                        target="_blank" style="color: var(--accent);">zackwebdev</a></p>
             </div>
         </div>
     </footer>
@@ -1779,95 +971,99 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <!-- Reservation Modal -->
+    <div class="reservation-modal" id="reservationModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Réservation de véhicule</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="car-summary">
+                    <div class="car-image">
+                        <img src="" alt="Car Image" id="modalCarImage">
+                    </div>
+                    <div class="car-details">
+                        <h3 id="modalCarName"></h3>
+                        <div class="car-specs-modal">
+                            <span id="modalCarYear"></span>
+                            <span id="modalCarTransmission"></span>
+                            <span id="modalCarSeats"></span>
+                        </div>
+                        <div class="car-price-modal">
+                            <span id="modalCarPrice"></span> MAD / jour
+                        </div>
+                    </div>
+                </div>
+                <form id="reservationForm" class="reservation-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pickupDate">Date de prise en charge</label>
+                            <input type="date" id="pickupDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pickupTime">Heure de prise en charge</label>
+                            <input type="time" id="pickupTime" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="returnDate">Date de retour</label>
+                            <input type="date" id="returnDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="returnTime">Heure de retour</label>
+                            <input type="time" id="returnTime" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">Prénom</label>
+                            <input type="text" id="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Nom</label>
+                            <input type="text" id="lastName" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Téléphone</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Adresse</label>
+                        <input type="text" id="address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="drivingLicense">Numéro de permis de conduire</label>
+                        <input type="text" id="drivingLicense" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="additionalNotes">Notes additionnelles</label>
+                        <textarea id="additionalNotes" rows="3"></textarea>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">J'accepte les conditions générales de location</label>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-check"></i>
+                            Confirmer la réservation
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <!-- JavaScript -->
-    <script>
-        // Mobile Navigation
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            hamburger.innerHTML = navLinks.classList.contains('active') ? 
-                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-        });
-
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
-            });
-        });
-
-        // Sticky header on scroll
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            header.classList.toggle('sticky', window.scrollY > 0);
-        });
-
-        // Car filtering
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const carCards = document.querySelectorAll('.car-card');
-
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterBtns.forEach(btn => btn.classList.remove('active'));
-                // Add active class to clicked button
-                btn.classList.add('active');
-                
-                const filter = btn.getAttribute('data-filter');
-                
-                carCards.forEach(card => {
-                    if (filter === 'all' || card.getAttribute('data-category').includes(filter)) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Form submission
-        const contactForm = document.querySelector('.contact-form form');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Merci pour votre message! Nous vous contacterons bientôt.');
-                this.reset();
-            });
-        }
-
-        // Booking form date validation
-        const pickupDate = document.getElementById('pickup-date');
-        const returnDate = document.getElementById('return-date');
-
-        if (pickupDate && returnDate) {
-            const today = new Date().toISOString().split('T')[0];
-            pickupDate.setAttribute('min', today);
-            
-            pickupDate.addEventListener('change', function() {
-                returnDate.setAttribute('min', this.value);
-            });
-        }
-    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>

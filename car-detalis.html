@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mellal Car Rent - Location de Voitures à Béni Mellal</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/stlye.css">
+</head>
+
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">Mellal<span>Car</span>Rent</a>
+                <ul class="nav-links">
+                    <li><a href="#home">Accueil</a></li>
+                    <li><a href="#cars">Nos Voitures</a></li>
+                    <li><a href="#how-it-works">Comment ça marche</a></li>
+                    <li><a href="#testimonials">Avis</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Car Details Section -->
+    <section class="car-details-section" style="padding:60px 0 40px 0; background:#f9f9f9;">
+        <div class="container">
+            <div class="car-details-flex">
+                <!-- Images -->
+                <div class="car-details-images">
+                    <div class="car-main-img">
+                        <img id="mainCarImg" src="assets/images/dacia-logan-2021-3.png" alt="Dacia Logan" />
+                        <button class="gallery-nav prev-btn" onclick="prevImage()">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="gallery-nav next-btn" onclick="nextImage()">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <div class="image-counter">
+                            <span id="currentImage">1</span>/<span id="totalImages">3</span>
+                        </div>
+                    </div>
+                    <div class="car-thumbs">
+                        <div class="thumb-wrapper">
+                            <img src="assets/images/dacia-logan-2021-3.png" alt="Dacia Logan" class="active"
+                                onclick="changeImage(this, 0)">
+                            <img src="assets/images/dacia-logan.png" alt="Dacia Logan" onclick="changeImage(this, 1)">
+                            <img src="assets/images/Dacia-Logan-2021.webp" alt="Dacia Logan"
+                                onclick="changeImage(this, 2)">
+                        </div>
+                    </div>
+                </div>
+                <!-- Info -->
+                <div class="car-details-info">
+                    <h2 class="car-details-title">Dacia Logan</h2>
+                    <div class="car-details-specs">
+                        <div class="spec-box"><i class="fas fa-users"></i> 5 places</div>
+                        <div class="spec-box"><i class="fas fa-door-open"></i> 4 portes</div>
+                        <div class="spec-box"><i class="fas fa-cogs"></i> Manuelle</div>
+                        <div class="spec-box"><i class="fas fa-gas-pump"></i> Diesel</div>
+                        <div class="spec-box"><i class="fas fa-snowflake"></i> Climatisation</div>
+                        <div class="spec-box"><i class="fas fa-suitcase"></i> 3 valises</div>
+                    </div>
+                    <div class="car-details-pricebox">
+                        <div class="car-details-price">
+                            <span class="price-main">250 MAD</span>
+                            <span class="price-day">/jour</span>
+                        </div>
+                        <div class="car-details-includes">
+                            <i class="fas fa-check-circle"></i> Assurance incluse &nbsp; <i
+                                class="fas fa-check-circle"></i> Kilométrage illimité
+                        </div>
+                    </div>
+                    <div class="car-details-actions">
+                        <a href="#" class="btn btn-primary">Réserver</a>
+                        <a href="https://wa.me/212612345678?text=Je%20veux%20réserver%20la%20Dacia%20Logan"
+                            class="btn btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Features and Description -->
+            <div class="car-details-bottom">
+                <div class="car-details-features">
+                    <h3>Équipements & Avantages</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Climatisation automatique</li>
+                        <li><i class="fas fa-check"></i> Bluetooth & USB</li>
+                        <li><i class="fas fa-check"></i> Régulateur de vitesse</li>
+                        <li><i class="fas fa-check"></i> ABS, ESP, airbags</li>
+                        <li><i class="fas fa-check"></i> Assistance 24/7</li>
+                        <li><i class="fas fa-check"></i> Consommation : 4.5L/100km</li>
+                        <li><i class="fas fa-check"></i> Sièges enfant disponibles</li>
+                        <li><i class="fas fa-check"></i> Annulation gratuite</li>
+                    </ul>
+                </div>
+                <div class="car-details-desc">
+                    <h3>Description</h3>
+                    <p>
+                        La Dacia Logan est le choix idéal pour vos déplacements à Béni Mellal et partout au Maroc.
+                        Profitez d'une berline spacieuse, économique et fiable, parfaite pour les familles ou les
+                        voyages d'affaires.<br>
+                        Son moteur diesel performant vous garantit une faible consommation et une conduite agréable.
+                        Avec ses équipements modernes et son coffre généreux, la Logan répond à tous vos besoins de
+                        confort et de sécurité.<br>
+                        Réservez dès maintenant et bénéficiez de notre service client 24/7 et de tarifs imbattables !
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Mellal Car Rent</h3>
+                    <p>Leader de la location de voitures à Béni Mellal depuis 2010. Nous proposons des véhicules neufs à
+                        des tarifs compétitifs.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Liens rapides</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Accueil</a></li>
+                        <li><a href="#cars">Nos véhicules</a></li>
+                        <li><a href="#how-it-works">Comment ça marche</a></li>
+                        <li><a href="#testimonials">Avis clients</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Nos services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Location courte durée</a></li>
+                        <li><a href="#">Location longue durée</a></li>
+                        <li><a href="#">Service avec chauffeur</a></li>
+                        <li><a href="#">Transfert aéroport</a></li>
+                        <li><a href="#">Assurance tous risques</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <div class="newsletter-form">
+                        <h3>Restez informé</h3>
+                        <p>Inscrivez-vous à notre newsletter pour recevoir nos dernières offres et actualités</p>
+                        <form>
+                            <div class="newsletter-input-group">
+                                <input type="email" placeholder="Votre adresse email" required>
+                                <button type="submit" class="btn">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </form>
+                        <div class="newsletter-features">
+                            <div class="newsletter-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Offres exclusives</span>
+                            </div>
+                            <div class="newsletter-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Pas de spam</span>
+                            </div>
+                            <div class="newsletter-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Désabonnement facile</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Mellal Car Rent. Tous droits réservés. | Développé par <a href="https://zackwebdev.com"
+                        target="_blank" style="color: var(--accent);">zackwebdev.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/212123456789" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
