@@ -2442,3 +2442,34 @@ footer {
         font-size: 0.95rem;
     }
 }
+/* Custom Contact Info Link Styles */
+.contact-info .info-content a,
+.footer-contact-info .info-content a {
+    color: var(--primary-dark);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s, background 0.2s;
+    padding: 2px 8px;
+    border-radius: 4px;
+    /* subtle background using --primary */
+    display: inline-block;
+}
+
+.contact-info .info-content a:hover,
+.footer-contact-info .info-content a:hover {
+    color: var(--accent);
+    background: rgba(255, 122, 0, 0.10);
+    /* accent color background on hover */
+    text-decoration: underline;
+}
+
+/* Footer Contact Info Link Styles - White Text */
+.footer-contact-info .info-content a {
+    color: var(--white);
+}
+
+.footer-contact-info .info-content a:hover {
+    color: var(--accent);
+    background: rgba(255, 122, 0, 0.18);
+    text-decoration: underline;
+}

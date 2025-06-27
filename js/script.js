@@ -182,7 +182,7 @@ function activateNavLink() {
     // Select all individual navigation links inside the .nav-links UL
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.classList.remove('active');
-        if (link.getAttribute('href').includes(current)) {
+        if (current && link.getAttribute('href').includes(current)) {
             link.classList.add('active');
         }
     });
